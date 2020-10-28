@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="457.0" prefWidth="629.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ViewController">
+   <children>
+      <TextField fx:id="txtUsuario" layoutX="40.0" layoutY="49.0" prefHeight="31.0" prefWidth="149.0" promptText="Usuário" AnchorPane.leftAnchor="33.0" />
+      <Button fx:id="btCadastrar" layoutX="212.0" layoutY="110.0" mnemonicParsing="false" onAction="#onBtCadastrarAction" prefHeight="25.0" prefWidth="107.0" text="Cadastrar" />
+      <Button fx:id="btCancelar" layoutX="212.0" layoutY="150.0" mnemonicParsing="false" onAction="#onBtTimeCancelarAction" prefHeight="25.0" prefWidth="107.0" text="Cancelar" />
+      <Button fx:id="btApagar" layoutX="212.0" layoutY="190.0" mnemonicParsing="false" onAction="#onBtTimeApagarAction" prefHeight="25.0" prefWidth="107.0" text="Apagar" />
+      <Button fx:id="btLogin" layoutX="33.0" layoutY="110.0" mnemonicParsing="false" onAction="#onBtLoginAction" prefHeight="25.0" prefWidth="107.0" text="Login" AnchorPane.leftAnchor="33.0" />
+      <Button fx:id="btTweets" layoutX="35.0" layoutY="150.0" mnemonicParsing="false" onAction="#onBtTweetsAction" prefHeight="25.0" prefWidth="107.0" text="Tweets" AnchorPane.leftAnchor="33.0" />
+      <Button fx:id="btTimeline" layoutX="33.0" layoutY="190.0" mnemonicParsing="false" onAction="#onBtTimelineAction" prefHeight="25.0" prefWidth="107.0" text="Timeline" AnchorPane.leftAnchor="33.0" />
+      <Button fx:id="btTweetar" layoutX="33.0" layoutY="230.0" mnemonicParsing="false" onAction="#onBtTweetarAction" prefHeight="25.0" prefWidth="107.0" text="Tweetar" AnchorPane.leftAnchor="33.0" />
+      <Button fx:id="btNdeSeguidores" layoutX="26.0" layoutY="270.0" mnemonicParsing="false" onAction="#onBtNdeSeguidoresAction" prefHeight="25.0" prefWidth="140.0" text="Nº de seguidores" AnchorPane.leftAnchor="33.0" />
+      <Button fx:id="btSeguidores" layoutX="26.0" layoutY="310.0" mnemonicParsing="false" onAction="#onBtSeguidoresAction" prefHeight="25.0" prefWidth="140.0" text="Seguidores" AnchorPane.leftAnchor="33.0" />
+      <Button fx:id="btSeguidos" layoutX="26.0" layoutY="350.0" mnemonicParsing="false" onAction="#onBtSeguidosAction" prefHeight="25.0" prefWidth="140.0" text="Seguidos" AnchorPane.leftAnchor="33.0" />
+      <Button fx:id="btSeguir" layoutX="26.0" layoutY="390.0" mnemonicParsing="false" onAction="#onBtSeguirAction" prefHeight="25.0" prefWidth="140.0" text="Seguir" AnchorPane.leftAnchor="33.0" />
+      <Label layoutX="335.0" layoutY="14.0" prefHeight="17.0" prefWidth="54.0" text="Usuário:" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="14.0" />
+      <Label fx:id="txtUsuarioLogado" layoutX="80.0" layoutY="14.0" AnchorPane.leftAnchor="87.0" />
+      <TextArea fx:id="txtLeitor" layoutX="404.0" layoutY="229.0" prefHeight="160.0" prefWidth="200.0" promptText="Digite aqui" AnchorPane.rightAnchor="25.0" />
+      <TextArea fx:id="txtTela" layoutX="393.0" layoutY="23.0" prefHeight="191.0" prefWidth="200.0" text="Para &#10;Login: Usuário&#10;Cadastrar : Usuário e PF/PJ&#10;Cancelar: Usuário&#10;Apagar : Usuário" AnchorPane.rightAnchor="25.0" />
+      <Button fx:id="btLogout" layoutX="155.0" layoutY="10.0" mnemonicParsing="false" onAction="#onBtLogoutAction" text="Logout" AnchorPane.topAnchor="10.0" />
+   </children>
+</AnchorPane>
