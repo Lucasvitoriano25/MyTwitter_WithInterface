@@ -120,7 +120,6 @@ public class ViewController implements Initializable {
 	public void onBtTimelineAction() {
 		String aux = "Sua timeline: \r\n";
 		try {
-			System.out.println("Timeline: ");
 			Vector<Tweet> tweet = Twitter.timeline(usuarioLogado);
 			for (Tweet obj : tweet) {
 				aux += (obj.getUsuario() + ": \r\n" + obj.getMensagem() + " \r\n");
@@ -164,7 +163,6 @@ public class ViewController implements Initializable {
 	public void onBtSeguidoresAction() {
 		String aux = "Seus seguidores :\r\n";
 		try {
-			txtTela.setText("Seus seguidores: ");
 			Vector<Perfil> perfil = Twitter.seguidores(usuarioLogado);
 			for (Perfil obj : perfil) {
 				aux += obj.getUsuario() + "\r\n";
@@ -179,9 +177,8 @@ public class ViewController implements Initializable {
 
 	@FXML
 	public void onBtSeguidosAction() {
-		String aux = "Seus seguidores :\r\n";
+		String aux = "Quem você segue :\r\n";
 		try {
-			System.out.println("Quem você segue: ");
 			Vector<Perfil> perfil = Twitter.seguidos(usuarioLogado);
 			for (Perfil obj : perfil) {
 				aux += obj.getUsuario() + "\r\n";
@@ -196,6 +193,7 @@ public class ViewController implements Initializable {
 
 	@FXML
 	public void onBtSeguirAction() {
+		
 		String usuarioSeguir = txtUsuario.getText();
 		txtUsuario.clear();
 		try {
@@ -250,8 +248,8 @@ public class ViewController implements Initializable {
 
 	@FXML
 	public void onBtTimeApagarAction() {
-		if (usuarioLogado == null) {
-			String usuario = txtUsuario.getText();
+		if (usuarioLogado != null) {
+			String usuario =usuarioLogado;
 			txtUsuario.clear();
 			try {
 				Twitter.removerperfil(usuario);
@@ -261,13 +259,13 @@ public class ViewController implements Initializable {
 				Alerts.showAlert("Entrada inválida", null, e.getMessage(), AlertType.ERROR);
 			}
 		} else
-			txtTela.setText("De logout primeiro");
+			txtTela.setText("De Login primeiro");
 	}
 
 	@FXML
 	public void onBtTimeCancelarAction() {
-		if (usuarioLogado == null) {
-			String usuario = txtUsuario.getText();
+		if (usuarioLogado != null) {
+			String usuario = usuarioLogado;
 			txtUsuario.clear();
 			try {
 				Twitter.cancelarPerfil(usuario);
@@ -280,7 +278,7 @@ public class ViewController implements Initializable {
 				Alerts.showAlert("Entrada inválida", null, e.getMessage(), AlertType.ERROR);
 			}
 		} else
-			txtTela.setText("De logout primeiro");
+			txtTela.setText("De Login primeiro");
 	}
 
 	private void printTelainicial(String text) {
