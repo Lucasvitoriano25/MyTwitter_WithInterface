@@ -73,9 +73,6 @@ public class ViewController implements Initializable {
 	@FXML
 	private Button btCancelar;
 
-	@FXML
-	private Button btApagar;
-
 	private String usuarioLogado = null;
 
 	@FXML
@@ -247,22 +244,6 @@ public class ViewController implements Initializable {
 	}
 
 	@FXML
-	public void onBtTimeApagarAction() {
-		if (usuarioLogado != null) {
-			String usuario =usuarioLogado;
-			txtUsuario.clear();
-			try {
-				Twitter.removerperfil(usuario);
-				printTelainicial("Perfil " + usuario + " Apagado \r\n");
-
-			} catch (PIException e) {
-				Alerts.showAlert("Entrada inválida", null, e.getMessage(), AlertType.ERROR);
-			}
-		} else
-			txtTela.setText("De Login primeiro");
-	}
-
-	@FXML
 	public void onBtTimeCancelarAction() {
 		if (usuarioLogado != null) {
 			String usuario = usuarioLogado;
@@ -283,7 +264,7 @@ public class ViewController implements Initializable {
 
 	private void printTelainicial(String text) {
 		txtTela.setText(text + "Para \r\n" + "Login: Usuário\r\n" + "Cadastrar : Usuário e PF/PJ\r\n"
-				+ "Cancelar: Usuário\r\n" + "Apagar : Usuário");
+				+ "Cancelar: Usuário\r\n");
 	}
 
 	@Override

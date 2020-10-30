@@ -39,13 +39,6 @@ public class MyTwitter implements ITwitter {
 	}
 
 	@Override
-	public void removerperfil(String usuario) throws PIException {
-		// Remove o usuário do Twitter
-		Banco_de_Dados.remover(usuario);
-
-	}
-
-	@Override
 	public void tweetar(String usuario, String mensagem) throws PIException, MFPException, PDException {
 		if (Banco_de_Dados.buscar(usuario) == null) {
 			throw new PIException(usuario);
@@ -62,7 +55,6 @@ public class MyTwitter implements ITwitter {
 		Banco_de_Dados.buscar(usuario).addTweet(tweet);
 		// Adiciona o tweet na timeline dos seguidores ativos
 		for (Perfil obj : Banco_de_Dados.buscar(usuario).getSeguidores()) {
-			if (obj.isAtivo() == true)
 				obj.addTweet(tweet);
 		}
 	}
@@ -149,13 +141,8 @@ public class MyTwitter implements ITwitter {
 		if (Banco_de_Dados.buscar(usuario).isAtivo() == false) {
 			throw new PDException(usuario);
 		}
-		Vector<Perfil> seguidores = new Vector<>();
 		// Adiciona ao vetor os seguidores ativos
-		for (Perfil obj : Banco_de_Dados.buscar(usuario).getSeguidores()) {
-			if (obj.isAtivo() == true)
-				seguidores.add(obj);
-		}
-		return seguidores;
+		return Banco_de_Dados.buscar(usuario).getSeguidores();
 	}
 
 	@Override
@@ -166,13 +153,9 @@ public class MyTwitter implements ITwitter {
 		if (Banco_de_Dados.buscar(usuario).isAtivo() == false) {
 			throw new PDException(usuario);
 		}
-		Vector<Perfil> seguidos = new Vector<>();
 		// Adiciona ao vetor os usuários ativos que o usuário segue
-		for (Perfil obj : Banco_de_Dados.buscar(usuario).getSeguidos()) {
-			if (obj.isAtivo() == true)
-				seguidos.add(obj);
-		}
-		return seguidos;
+		
+		return Banco_de_Dados.buscar(usuario).getSeguidos();
 	}
 
 }

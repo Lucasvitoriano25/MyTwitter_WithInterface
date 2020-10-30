@@ -48,11 +48,20 @@ public abstract class Perfil {
 	}
 
 	public Vector<Perfil> getSeguidos() {
-		return seguidos;
+		Vector<Perfil> auxSeguidos = new Vector<>();
+		for (Perfil obj : seguidos) {
+			if (obj.isAtivo() == true)
+				auxSeguidos.add(obj);		}
+		return auxSeguidos;
 	}
 
 	public Vector<Perfil> getSeguidores() {
-		return seguidores;
+		Vector<Perfil> auxSeguidores = new Vector<>();
+		for (Perfil obj : seguidores) {
+			if (obj.isAtivo() == true)
+				auxSeguidores.add(obj);
+		}
+		return auxSeguidores;
 	}
 
 	public Vector<Tweet> getTimeline() {

@@ -1,6 +1,5 @@
 package profile;
 
-import exceptions.PIException;
 import exceptions.UJCException;
 import exceptions.UNCException;
 
@@ -11,5 +10,4 @@ public interface IRepositorioUsuario {
 
 	public void atualizar(Perfil usuario) throws UNCException;
 
-	public void remover(String usuario) throws PIException;
 }
